@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import type { FC } from 'react';
+import EchartsPlayground from './EchartsPlayground';
 import Drawer from '../components/Drawer';
 import Welcome from './Welcome';
+import Header from '../components/Header';
 import styles from './index.module.less';
 
 const PAGES = {
   welcome: <Welcome />,
+  echarts: <EchartsPlayground />,
 };
 
 const Main: FC = () => {
@@ -17,7 +20,10 @@ const Main: FC = () => {
   return (
     <div className={styles.Main}>
       <Drawer onPageChange={handlePageChange} />
-      {PAGES[currentPage]}
+      <div className={styles.content}>
+        <Header />
+        <div style={{ padding: 20 }}>{PAGES[currentPage]}</div>
+      </div>
     </div>
   );
 };

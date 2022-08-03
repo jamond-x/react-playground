@@ -1,65 +1,37 @@
-// import React, { useEffect, useRef } from 'react';
-// import type { FC } from 'react';
-// import styles from './index.module.less';
+import { Avatar, Badge, Card, Divider } from '@douyinfe/semi-ui';
+import styles from './index.module.less';
+import List from '../../components/List';
 
-// import * as echarts from 'echarts/core';
-
-// const ops = {
-//   xAxis: {
-//     data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-//   },
-//   yAxis: {},
-//   series: [
-//     {
-//       type: 'bar',
-//       data: [23, 24, 18, 25, 27, 28, 25],
-//     },
-//   ],
-// };
-
-// //记得提commit
-// const Welcome: FC = () => {
-//   const chartsRef: any = useRef();
-//   useEffect(() => {
-//     const chartsInstance = echarts.init(
-//       chartsRef.current as unknown as HTMLElement
-//     );
-//     chartsInstance.setOption(ops);
-//   }, []);
-//   return (
-//     <>
-//       <div ref={chartsRef} className={styles.box}></div>
-//     </>
-//   );
-// };
-
-import { useEffect, useRef } from 'react';
-import * as echarts from 'echarts';
+const description = ['性别：男', '公司：知乎', '部门：技术中台'];
 
 function Welcome() {
-  const chartRef = useRef(null);
-
-  useEffect(() => {
-    let chartInstance = echarts.init(chartRef.current);
-    const option = {
-      xAxis: {
-        data: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-      },
-      yAxis: {},
-      series: [
-        {
-          type: 'bar',
-          data: [23, 24, 18, 25, 27, 28, 25],
-        },
-      ],
-    };
-    chartInstance.setOption(option);
-  }, []);
-
   return (
-    <div style={{ textAlign: 'center' }}>
-      <h2>React Echarts 柱状图</h2>
-      <div ref={chartRef} style={{ height: '400px', width: 700 }}></div>
+    <div>
+      <div className={styles.userCard}>
+        <img
+          src='https://cdn.pixabay.com/photo/2013/10/09/02/27/lake-192990_1280.jpg'
+          width={350}
+          height={90}
+          className={styles.backgroundImg}
+        />
+        <div className={styles.info}>
+          <Avatar
+            alt='beautiful cat'
+            src='https://bbs.404fwf.cn/assets/avatars/OyAKKiIJ6ojR0mOy.png'
+            style={{ margin: 4 }}
+            size='large'
+          />
+          <span className={styles.name}>
+            <div className={styles.description}>我想嘻嘻哈哈🤪</div>
+            <div className={styles.title}>
+              向兴强
+              <Badge count='知乎' />
+            </div>
+          </span>
+        </div>
+        <Divider />
+        <List content={description} />
+      </div>
     </div>
   );
 }

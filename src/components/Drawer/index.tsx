@@ -12,6 +12,7 @@ import styles from './index.module.less';
 const tab = [
   { itemKey: 'welcome', text: '用户管理', icon: <IconUser /> },
   { itemKey: 'echarts', text: 'Echarts', icon: <IconStar /> },
+  { itemKey: 'css', text: 'CSS', icon: <IconStar /> },
   {
     itemKey: 'union-management',
     text: '公会管理',

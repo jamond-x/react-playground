@@ -4,11 +4,13 @@ import EchartsPlayground from './EchartsPlayground';
 import Drawer from '../components/Drawer';
 import Welcome from './Welcome';
 import Header from '../components/Header';
+import Css from './Css';
 import styles from './index.module.less';
 
 const PAGES = {
   welcome: <Welcome />,
   echarts: <EchartsPlayground />,
+  css: <Css />,
 };
 
 const Main: FC = () => {

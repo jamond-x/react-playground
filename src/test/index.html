@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+
+      .box {
+        width: 450px;
+        height: 450px;
+        background-color: rgb(162, 105, 105);
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .box * {
+        transform-style: preserve-3d;
+      }
+
+      .main {
+        width: 200px;
+        height: 200px;
+        position: relative;
+        animation: main 4s ease infinite;
+      }
+
+      @keyframes main {
+        0% {
+          transform: scale(0.2) rotateY(-90deg);
+        }
+        50% {
+          transform: scale(1.4) rotateY(0deg);
+        }
+        100% {
+          transform: scale(0.2) rotateY(90deg);
+        }
+      }
+
+
+      .circle {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: white;
+        position: absolute;
+        /* transform: translate3d(10px, -40px, 100px); */
+        animation: el 4s ease infinite;
+      }
+
+      .triangle {
+        width: 0;
+        height: 0;
+        border-top: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-bottom: 10px solid white;
+        border-left: 10px solid transparent;
+        position: absolute;
+        transform: translate3d(5px, -150px, 100px);
+        /* animation: el 4s ease infinite; */
+      }
+
+      @keyframes el {
+        0%{
+          transform: translate3d(120px, -90px, 0px);
+        }
+        25%{
+          transform: translate3d(10px, -40px, 170px);
+        }
+        50%{
+          transform: translate3d(10px, -40px, 150px);
+        }
+        65%{
+          transform: translate3d(10px, -40px, 130px);
+        }
+        100%{
+          transform: translate3d(90px, -90px, 0px);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="main">
+        <img
+          src="./static/7169d98a-7841-4c26-8a68-52c15ae2bc88_thumb.png"
+          alt=""
+          class="img"
+        />
+        <div class="circle"></div>
+        <div class="triangle"></div>
+      </div>
+    </div>
+  </body>
+</html>

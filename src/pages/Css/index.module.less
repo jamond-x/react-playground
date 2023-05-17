@@ -1,0 +1,112 @@
+.container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: black !important;
+
+  & * {
+    transform-style: preserve-3d;
+  }
+}
+
+:root{
+  --end-transform: translate3d(90px, -50px, 0px);
+}
+
+.main {
+  width: 200px;
+  height: 100px;
+  position: relative;
+  animation: main 4s ease infinite;
+  perspective: 400px;
+}
+
+  @keyframes main {
+    0% {
+      transform: scale(0.2) rotateY(-90deg);
+    }
+    50% {
+      transform: scale(1) rotateY(0deg);
+    }
+    100% {
+      transform: scale(0) rotateY(90deg);
+    }
+  }
+
+  .circle {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    // transform: translate3d(10px, -40px, 230px);
+    animation: el1 4s ease infinite;
+  }
+
+  .triangle {
+    width: 0;
+    height: 0;
+    border-top: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-bottom: 10px solid white;
+    border-left: 10px solid transparent;
+    position: absolute;
+    // transform: translate3d(5px, -150px, 100px);
+    animation: el2 4s ease infinite;
+  }
+
+  .square{
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    position: absolute;
+    animation: el1 4s ease infinite;
+  }
+
+  @keyframes el1 {
+    // 100%{
+    //   transform: var(--end-transform);
+    // }
+    0%{
+      transform: translate3d(120px, -90px, 0px);
+    }
+    25%{
+      transform: translate3d(10px, -40px, 100px);
+    }
+    50%{
+      transform: translate3d(10px, -40px, 120px);
+    }
+    65%{
+      transform: translate3d(10px, -40px, 100px);
+    }
+    100%{
+      transform: translate3d(90px, -90px, 0px);
+    }
+  }
+
+
+  @keyframes el2 {
+    0%{
+      transform: translate3d(5px, -150px, 0px);
+    }
+    25%{
+      transform: translate3d(10px, -150px, 120px);
+    }
+    50%{
+      transform: translate3d(10px, -150px, 100px);
+    }
+    65%{
+      transform: translate3d(10px, -150px, 90px);
+    }
+    100%{
+      transform: translate3d(90px, -90px, 0px);
+    }
+  }
+
+
+
+.tabBox{
+  width: 90%;
+  height: 90%;
+  background-color: white;
+}
